@@ -4,12 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="horizontal"
+    android:background="@drawable/front"
+    >
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/asmita"/>
+    <Button
+        android:id="@+id/signUp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:background="#8A91AF4C"
+        android:text="SignUp"
+        android:onClick="signInClicked"
+        android:textSize="18sp"/>
 
+    <Button
+        android:id="@+id/logIn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="10dp"
 
+        android:background="#8A91AF4C"
+        android:text="LogIn"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
 </LinearLayout>
