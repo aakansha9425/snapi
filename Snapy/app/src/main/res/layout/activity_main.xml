@@ -30,7 +30,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="110dp"
         android:layout_marginTop="10dp"
-
+        android:onClick="logInClicked"
         android:background="#8A91AF4C"
         android:text="LogIn"
         android:textColor="#FFFFFF"

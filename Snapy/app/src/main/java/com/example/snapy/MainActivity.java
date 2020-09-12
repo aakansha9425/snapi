@@ -15,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
         Intent signIn=new Intent(this,SignUp.class);
         startActivity(signIn);
     }
+    public void logInClicked(View view){
+        Intent lognIn=new Intent(this,LogIn.class);
+        startActivity(lognIn);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
