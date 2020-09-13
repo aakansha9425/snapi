@@ -45,6 +45,7 @@
         android:layout_marginLeft="120dp"
         android:text="LogIn"
         android:textSize="20sp"
+        android:onClick="alreadyRegister"
         />
 
 </LinearLayout>
