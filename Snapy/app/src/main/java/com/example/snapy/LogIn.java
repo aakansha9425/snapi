@@ -36,9 +36,13 @@ public class LogIn extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+                            if(mAuth.getCurrentUser().isEmailVerified()) {
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                welcomeActivity();
+                            }else{
+                                Toast.makeText(LogIn.this, "Please verify email address to login", Toast.LENGTH_SHORT).show();
 
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            welcomeActivity();
+                            }
 
                         } else {
                             // If sign in fails, display a message to the user.
