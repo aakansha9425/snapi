@@ -18,6 +18,7 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        mAuth=FirebaseAuth.getInstance();
     }
 
     @Override
@@ -31,6 +32,7 @@ public class WelcomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.item3:
+                mAuth.signOut();
                 Intent intent=new Intent(this,MainActivity.class);
                 startActivity(intent);
                 return true;
