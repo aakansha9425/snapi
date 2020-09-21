@@ -31,10 +31,14 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.item1:
+                Intent intent=new Intent(this,Profile.class);
+                startActivity(intent);
+                return true;
             case R.id.item3:
                 mAuth.signOut();
-                Intent intent=new Intent(this,MainActivity.class);
-                startActivity(intent);
+                Intent intent1=new Intent(this,MainActivity.class);
+                startActivity(intent1);
                 return true;
         }
 
