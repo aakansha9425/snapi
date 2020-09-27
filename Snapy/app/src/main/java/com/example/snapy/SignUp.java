@@ -84,7 +84,7 @@ public class SignUp extends AppCompatActivity {
                         } else {
 
                             Log.e("Authentication",task.getException().toString());
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
+                            Toast.makeText(getApplicationContext(), "Authentication failed",
                                     Toast.LENGTH_SHORT).show();
                         }
 
