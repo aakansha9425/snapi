@@ -9,7 +9,7 @@
     >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvSignUp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="5dp"
@@ -19,47 +19,55 @@
         android:textSize="40sp" />
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/etnameregister"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:maxLines="1"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:hint="Enter your Name"
         android:inputType="textPersonName"
         />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/etEmailregister"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:maxLines="1"
         android:hint="Email "
         android:inputType="textEmailAddress"/>
+
     <EditText
-        android:id="@+id/dateOfBirth"
+        android:id="@+id/etDobregister"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:maxLines="1"
         android:textSize="20sp"
         android:hint="Date of Birth"
         android:inputType="date"
         />
+
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/etpasswrdregister"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:maxLines="1"
         android:textSize="20sp"
         android:hint="Enter your Password"
         android:inputType="textPassword"
         />
 
+    <LinearLayout
+        android:id="@+id/llGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
     <TextView
-        android:id="@+id/gender"
+        android:id="@+id/tvgenderregister"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Gender"
+        android:layout_height="wrap_content"
+        android:text="Gender - "
         android:paddingTop="10dp"
         android:layout_marginLeft="10dp"
         android:textColor="#1E1C1C"
@@ -67,25 +75,26 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <RadioButton
-            android:id="@+id/simpleRadioButton"
+            android:id="@+id/rbmaleregister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Male"
             android:textSize="20sp"/>
 
         <RadioButton
-            android:id="@+id/simpleRadioButton1"
+            android:id="@+id/rbfemaleregister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Female"
 
             android:textSize="20sp"/>
         <RadioButton
-            android:id="@+id/simpleRadioButton2"
+            android:id="@+id/rbOtherregister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Other"
@@ -93,13 +102,14 @@
             android:textSize="20sp"/>
     </RadioGroup>
 
+    </LinearLayout>
     <Button
-        android:id="@+id/signUpButton"
+        android:id="@+id/btnSignup"
         android:layout_width="144dp"
         android:layout_height="63dp"
         android:layout_marginLeft="120dp"
         android:text="SignUp"
         android:textSize="20sp"
-        android:onClick="register"
+        android:onClick="registerUser"
         />
 </LinearLayout>

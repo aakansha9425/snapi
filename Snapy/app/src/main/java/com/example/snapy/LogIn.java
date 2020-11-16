@@ -51,8 +51,6 @@ public class LogIn extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
 
                         }
-
-
                     }
                 });
     }
@@ -70,7 +68,7 @@ public class LogIn extends AppCompatActivity {
         final EditText editText=new EditText(view.getContext());
         AlertDialog.Builder resetPasswordDialog=new AlertDialog.Builder(view.getContext());
         resetPasswordDialog.setTitle("Reset Password ?");
-        resetPasswordDialog.setMessage("Enter Your Emailid");
+        resetPasswordDialog.setMessage("Enter Your Email id");
         resetPasswordDialog.setView(editText);
         resetPasswordDialog.setPositiveButton("Send Link", new DialogInterface.OnClickListener() {
             @Override
