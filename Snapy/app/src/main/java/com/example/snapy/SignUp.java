@@ -7,6 +7,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,10 +20,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Pattern;
 
-public class SignUp extends AppCompatActivity{
+public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile("^" +
@@ -39,6 +41,7 @@ public class SignUp extends AppCompatActivity{
     EditText etnameReg, etemailReg, etDobReg, etPasswrdReg;
     Button btnSignup;
     RadioButton rbmaleReg, rbfemaleReg, rbotherReg;
+    ProgressBar progressBarReg;
     private FirebaseAuth mAuth;
     FirebaseUser currentUser;
 
@@ -46,6 +49,9 @@ public class SignUp extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        mAuth = FirebaseAuth.getInstance();
+
         tvSignup = findViewById(R.id.tvSignUp);
         etnameReg = findViewById(R.id.etnameregister);
         etemailReg = findViewById(R.id.etEmailregister);
@@ -55,17 +61,27 @@ public class SignUp extends AppCompatActivity{
         rbfemaleReg = findViewById(R.id.rbfemaleregister);
         rbotherReg = findViewById(R.id.rbOtherregister);
         btnSignup = findViewById(R.id.btnSignup);
+        btnSignup.setOnClickListener(this);
+        progressBarReg = findViewById(R.id.progressBar);
 
-        mAuth = FirebaseAuth.getInstance();
+
         currentUser = mAuth.getCurrentUser();
-
     }
 
-    public void registerUser(View v) {
-        String fullName = etnameReg.getText().toString().trim();
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnSignup:
+                registerUser();
+                break;
+        }
+    }
+
+    private void registerUser() {
+        final String fullName = etnameReg.getText().toString().trim();
         String password = etPasswrdReg.getText().toString().trim();
-        String dob = etDobReg.getText().toString().trim();
-        String email = etemailReg.getText().toString().trim();
+        final String dob = etDobReg.getText().toString().trim();
+        final String email = etemailReg.getText().toString().trim();
 
         if (fullName.isEmpty()) {
             etnameReg.setError("Full Name is required");
@@ -109,10 +125,50 @@ public class SignUp extends AppCompatActivity{
             return;
         }
 
-        signUpFunction();
+        //signUpFunction();
+        progressBarReg.setVisibility(View.VISIBLE);
+        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    User user = new User(fullName,dob,email);
+
+                    FirebaseDatabase.getInstance().getReference("Users")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).
+                            setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(SignUp.this,"User has been registered successfully!",Toast.LENGTH_LONG).show();
+                                progressBarReg.setVisibility(View.GONE);
+                                startActivity(new Intent(SignUp.this,MainActivity.class));
+                            }
+                            else{
+                                Toast.makeText(SignUp.this,"Failed to Register! Try Again ",Toast.LENGTH_LONG).show();
+                                progressBarReg.setVisibility(View.GONE);
+                            }
+                        }
+                    });
+
+                }
+                else {
+                    Toast.makeText(SignUp.this,"Failed to Register",Toast.LENGTH_LONG).show();
+                    progressBarReg.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
-   /* private boolean validateEmail() {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        etnameReg.setText("");
+        etemailReg.setText("");
+        etDobReg.setText("");
+        etPasswrdReg.setText("");
+    }
+
+    /* private boolean validateEmail() {
         String emailInput = etemailReg.getText().toString().trim();
         if (emailInput.isEmpty()) {
             etemailReg.setError("Field can't be empty");
@@ -125,7 +181,7 @@ public class SignUp extends AppCompatActivity{
             return true;
         }
     }*/
-
+/*
     public void LoginActivity() {
         Intent intent = new Intent(this, LogIn.class);
         startActivity(intent);
@@ -144,7 +200,6 @@ public class SignUp extends AppCompatActivity{
 
             }
         });
-
     }
 
     public void signUpFunction() {
@@ -164,5 +219,6 @@ public class SignUp extends AppCompatActivity{
                     }
                 });
     }
+*/
 
 }
