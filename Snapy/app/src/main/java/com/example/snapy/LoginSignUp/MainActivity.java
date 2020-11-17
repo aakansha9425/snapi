@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (user.isEmailVerified()) {
                         //Redirecting to Home Screen
                         progressBar.setVisibility(View.GONE);
-                        startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
+                        startActivity(new Intent(MainActivity.this, DashboardActivity.class));
                     } else {
                         user.sendEmailVerification();
                         Toast.makeText(MainActivity.this, "Check your email to verify your account", Toast.LENGTH_LONG).show();

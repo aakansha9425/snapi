@@ -56,6 +56,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
             etEmail.requestFocus();
             return;
         }
+
         progressBar.setVisibility(View.VISIBLE);
         auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
