@@ -3,6 +3,7 @@
     package="com.example.snapy">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera2.auto" />
 
@@ -18,23 +19,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".NewActivity"></activity>
+        <activity android:name=".DashboardActivity" />
         <activity android:name=".FindUsersActivity" />
         <activity android:name=".ChooseRecieversActivity" />
         <activity android:name=".ShowCaptureActivity" />
-        <activity android:name=".ForgetPasswordActivity" />
-        <activity android:name=".Profile" />
+        <activity android:name=".LoginSignUp.ForgetPasswordActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".WelcomeActivity" />
-        <activity android:name=".LogIn" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".LoginSignUp.LogIn" />
+        <activity android:name=".LoginSignUp.SignUp" />
+        <activity android:name=".LoginSignUp.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginSignUp.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

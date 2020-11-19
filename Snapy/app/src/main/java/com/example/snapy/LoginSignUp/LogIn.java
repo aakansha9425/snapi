@@ -1,4 +1,4 @@
-package com.example.snapy;
+package com.example.snapy.LoginSignUp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.snapy.R;
+import com.example.snapy.WelcomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -91,7 +93,7 @@ public class LogIn extends AppCompatActivity {
         resetPasswordDialog.create().show();
     }
     public void welcomeActivity(){
-        Intent intent=new Intent(this,WelcomeActivity.class);
+        Intent intent=new Intent(this, WelcomeActivity.class);
         startActivity(intent);
     }
 }

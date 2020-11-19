@@ -1,8 +1,7 @@
-package com.example.snapy;
+package com.example.snapy.LoginSignUp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.snapy.R;
+import com.example.snapy.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -37,7 +38,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     ".{4,}" +               //at least 4 characters
                     "$");
 
-    TextView tvSignup;
+    TextView tvLogin;
     EditText etnameReg, etemailReg, etDobReg, etPasswrdReg;
     Button btnSignup;
     RadioButton rbmaleReg, rbfemaleReg, rbotherReg;
@@ -52,7 +53,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         mAuth = FirebaseAuth.getInstance();
 
-        tvSignup = findViewById(R.id.tvSignUp);
+        tvLogin = findViewById(R.id.login_transaction);
+        tvLogin.setOnClickListener(this);
         etnameReg = findViewById(R.id.etnameregister);
         etemailReg = findViewById(R.id.etEmailregister);
         etDobReg = findViewById(R.id.etDobregister);
@@ -74,6 +76,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             case R.id.btnSignup:
                 registerUser();
                 break;
+            case R.id.login_transaction:
+                startActivity(new Intent(SignUp.this,MainActivity.class));
+                break;
         }
     }
 
@@ -88,40 +93,34 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             etnameReg.requestFocus();
             return;
         }
-
-        if(dob.isEmpty()){
-            etDobReg.setError("Date of Birth is required");
-            etDobReg.requestFocus();
-            return;
-        }
-
         if (email.isEmpty()) {
             etemailReg.setError("Email is required");
             etemailReg.requestFocus();
             return;
         }
-
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             etemailReg.setError("Please provide valid email");
             etemailReg.requestFocus();
             return;
         }
-
         if (password.isEmpty()) {
             etPasswrdReg.setError("Password is required");
             etPasswrdReg.requestFocus();
             return;
         }
-
         if (password.length() < 6) {
             etPasswrdReg.setError("Min password length must be 6 characters");
             etPasswrdReg.requestFocus();
             return;
         }
-
         if (!PASSWORD_PATTERN.matcher(password).matches()){
             etPasswrdReg.setError("Password too weak");
             etPasswrdReg.requestFocus();
+            return;
+        }
+        if(dob.isEmpty()){
+            etDobReg.setError("Date of Birth is required");
+            etDobReg.requestFocus();
             return;
         }
 
@@ -141,7 +140,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                             if(task.isSuccessful()){
                                 Toast.makeText(SignUp.this,"User has been registered successfully!",Toast.LENGTH_LONG).show();
                                 progressBarReg.setVisibility(View.GONE);
-                                startActivity(new Intent(SignUp.this,MainActivity.class));
+                                startActivity(new Intent(SignUp.this, MainActivity.class));
                             }
                             else{
                                 Toast.makeText(SignUp.this,"Failed to Register! Try Again ",Toast.LENGTH_LONG).show();

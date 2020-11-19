@@ -1,4 +1,4 @@
-package com.example.snapy;
+package com.example.snapy.followObject;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,6 +11,8 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.snapy.R;
+import com.example.snapy.UserInformation;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CameraFragment"
+    tools:context=".fragment.CameraFragment"
     android:focusableInTouchMode="false">
 
     <FrameLayout
@@ -47,21 +47,21 @@
 
         <ImageButton
             android:id="@+id/imageButtonProfile"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="55dp"
             android:backgroundTint="#00FFFFFF"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/profile"
-            app:tint="#ddd" />
+            app:srcCompat="@drawable/profile_click"
+            />
 
         <ImageButton
             android:id="@+id/searchUsers"
-            android:layout_width="55dp"
+            android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginTop="2dp"
             android:backgroundTint="#00FFFFFF"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/search"
-            app:tint="#ddd" />
+            app:srcCompat="@drawable/search_click"/>
 
         <EditText
             android:id="@+id/cameraFindUsers"
@@ -76,24 +76,24 @@
 
         <ImageButton
             android:id="@+id/imageButtonFlashSwitch"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
+            android:layout_width="53dp"
+            android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/flash"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@drawable/flash_click"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"
-            app:tint="#ddd" />
+            tools:layout_editor_absoluteY="0dp" />
 
         <ImageButton
             android:id="@+id/imageButtonCameraSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
-            app:srcCompat="@android:drawable/ic_popup_sync"
+            app:srcCompat="@drawable/camera_flip"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
-            app:tint="#ddd" />
+            />
     </LinearLayout>
 
 

@@ -1,9 +1,8 @@
-package com.example.snapy;
+package com.example.snapy.LoginSignUp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -14,17 +13,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.snapy.DashboardActivity;
+import com.example.snapy.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApiNotAvailableException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.zip.CheckedInputStream;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    TextView tvRegister,tvForgetPass;
+    TextView tvRegister,tvForgetPass,tvLogin,tvRegisterPage;
     EditText etEmailLogin,etPassLogin;
     Button btnLogin;
     ProgressBar progressBar;
@@ -43,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tvLogin = findViewById(R.id.login_transaction);
+        tvRegisterPage = findViewById(R.id.register_transaction);
+        tvRegisterPage.setOnClickListener(this);
         tvRegister = findViewById(R.id.tvRegister);
         tvRegister.setOnClickListener(this);
         tvForgetPass = findViewById(R.id.tvForgetPass);
@@ -56,30 +57,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-       /* FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser!=null){
-            welcomeActivity();
-        }
-    }
-
-    public void welcomeActivity(){
-        Intent intent=new Intent(this,WelcomeActivity.class);
-        startActivity(intent);
-    }*/
 
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tvRegister:
-                startActivity(new Intent(this,SignUp.class));
+                startActivity(new Intent(this, SignUp.class));
                 break;
             case R.id.tvForgetPass:
-                startActivity(new Intent(this,ForgetPasswordActivity.class));
+                startActivity(new Intent(this, ForgetPasswordActivity.class));
                 break;
             case R.id.btnlogIn:
                 userLogin();
                 break;
+            case R.id.register_transaction:
+                startActivity(new Intent(this, SignUp.class));
         }
     }
 

@@ -9,8 +9,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.snapy.LoginSignUp.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class WelcomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -32,12 +32,12 @@ public class WelcomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.item1:
-                Intent intent=new Intent(this,Profile.class);
+                Intent intent=new Intent(this, ProfileActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.item3:
                 mAuth.signOut();
-                Intent intent1=new Intent(this,MainActivity.class);
+                Intent intent1=new Intent(this, MainActivity.class);
                 startActivity(intent1);
                 return true;
         }

@@ -27,12 +27,12 @@
 
         <ImageButton
             android:id="@+id/imageButtonChat"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:clickable="true"
             android:elevation="0dp"
             android:scaleType="fitXY"
-            android:src="@android:drawable/stat_notify_chat"
+            android:src="@drawable/chat_click"
             app:backgroundTint="#00FFFFFF" />
 
         <View
@@ -47,7 +47,7 @@
             android:layout_margin="5dp"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/circle"
+            android:src="@drawable/camera_click"
             app:backgroundTint="#00FFFFFF" />
 
         <View
@@ -58,11 +58,11 @@
 
         <ImageButton
             android:id="@+id/imageButtonPeople"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/friends"
+            android:src="@drawable/friends_click"
             app:backgroundTint="#00FFFFFF" />
     </LinearLayout>
 

@@ -1,4 +1,4 @@
-package com.example.snapy;
+package com.example.snapy.fragment;
 
 import android.Manifest;
 import android.content.Context;
@@ -44,6 +44,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.example.snapy.FindUsersActivity;
+import com.example.snapy.followObject.FollowAdapter;
+import com.example.snapy.followObject.FollowObject;
+import com.example.snapy.ProfileActivity;
+import com.example.snapy.R;
+import com.example.snapy.ShowCaptureActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -212,7 +218,7 @@ public class CameraFragment extends Fragment {
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), Profile.class);
+                Intent intent = new Intent(getContext(), ProfileActivity.class);
                 startActivity(intent);
             }
         });

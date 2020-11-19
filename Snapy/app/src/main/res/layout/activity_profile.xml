@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/grey"
     android:orientation="vertical"
-    tools:context=".Profile">
+    tools:context=".ProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -102,7 +102,7 @@
                     <ImageView
                         android:layout_width="150dp"
                         android:layout_height="90dp"
-                        android:scaleType="centerCrop"
+                        android:src="@drawable/profile_icon"
                          />
 
                 </androidx.cardview.widget.CardView>
@@ -116,8 +116,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-
-                        android:text="Sanskar Tiwari"
+                        android:fontFamily="@font/bree_serif"
                         android:textColor="#424242"
                         android:textSize="21sp"
                         android:textStyle="bold" />
@@ -131,86 +130,6 @@
 
                 </LinearLayout>
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:paddingBottom="10dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:background="@drawable/circular_grey_bordersolid"
-                            android:padding="10dp"
-                            />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="97%"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="@string/job_success"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:background="@drawable/circular_grey_bordersolid"
-                            android:padding="10dp"
-                             />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4.8/5"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="@string/ratings"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                </LinearLayout>
             </LinearLayout>
 
             <!--Option Bar-->
@@ -348,7 +267,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/contact"
+                            android:text="User Details"
                             android:textSize="17sp"
                             android:textStyle="bold" />
 
@@ -372,28 +291,6 @@
                         android:layout_marginTop="10dp"
                         android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:paddingRight="8dp">
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="@drawable/circular_grey_bordersolid"
-                                android:padding="10dp"
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:text="+91 7999193854"
-                                android:textSize="15sp"
-                                android:textColor="@color/goodgrey"
-                                />
-                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -410,11 +307,12 @@
                                  />
 
                             <TextView
+                                android:id="@+id/profileEmail"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:textColor="@color/goodgrey"
-                                android:text="sanskar@theindianappguy.com"
+                               android:fontFamily="@font/balthazar"
                                 android:textSize="15sp"
                                 />
                         </LinearLayout>
@@ -434,10 +332,10 @@
                                />
 
                             <TextView
+                                android:id="@+id/profileDob"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
-                                android:text="Leeds, United Kingdom"
                                 android:textSize="15sp"
                                 android:textColor="@color/goodgrey"
                                 />
@@ -445,6 +343,19 @@
 
                     </LinearLayout>
                 </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/btn_logout_bg"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/bree_serif"
+                    android:text="Logout"
+                    android:textColor="#293859"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
 
 
                 </LinearLayout>

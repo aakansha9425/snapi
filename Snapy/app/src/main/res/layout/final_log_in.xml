@@ -41,7 +41,7 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="185dp"
+        android:layout_width="195dp"
         android:layout_height="75dp"
         android:layout_below="@+id/login_transaction"
         android:layout_marginTop="-57dp"
@@ -63,6 +63,7 @@
         android:layout_below="@id/imageView10"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="75dp"
+        android:paddingEnd="15dp"
         android:backgroundTint="#55A8E1"
         android:hint="Enter username"
         android:maxLines="1"
@@ -86,21 +87,18 @@
 
     <Button
         android:id="@+id/btnlogIn"
-        android:layout_width="182dp"
-        android:layout_height="66dp"
-        android:text="Login"
-        android:textSize="25sp"
-        android:background="@drawable/btn_login_bg"
-        android:visibility="visible"
+        android:layout_width="191dp"
+        android:layout_height="67dp"
+        android:text="Button"
+        android:visibility="invisible"
         android:layout_below="@id/tvForgetPass"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/bree_serif"
+        android:layout_marginTop="40dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="9dp"/>
+        android:layout_marginRight="18dp"/>
 
     <TextView
         android:id="@+id/tvForgetPass"
-        android:layout_width="wrap_content"
+        android:layout_width="327dp"
         android:layout_height="27dp"
         android:text="Forget password?"
         android:textColor="#A30E0E0E"
@@ -114,18 +112,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView11"
-        android:layout_marginTop="-31dp"
+        android:layout_marginTop="-25dp"
         android:fontFamily="@font/bree_serif"
         android:gravity="center"
         android:text="Don't have an account ? Register with us"
         android:textColor="#A30E0E0E"
         android:textSize="18sp" />
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvRegister"
-        android:visibility="gone"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

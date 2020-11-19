@@ -1,4 +1,4 @@
-package com.example.snapy;
+package com.example.snapy.followObject;
 
 public class FollowObject {
 
