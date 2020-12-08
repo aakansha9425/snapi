@@ -160,5 +160,4 @@ public class FindUsersActivity extends AppCompatActivity {
         listenForData();
         return results;
     }
-
 }

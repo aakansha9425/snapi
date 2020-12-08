@@ -14,7 +14,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 
-import com.example.snapy.fragment.CameraFragment;
 import com.example.snapy.fragment.ChatFragment;
 import com.example.snapy.fragment.StoryFragment;
 

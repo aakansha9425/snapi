@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewActivity"></activity>
+        <activity android:name=".DisplayImageActivity"></activity>
+        <activity android:name=".NewActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".FindUsersActivity" />
         <activity android:name=".ChooseRecieversActivity" />

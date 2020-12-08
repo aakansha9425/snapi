@@ -1,10 +1,11 @@
-package com.example.snapy.fragment;
+package com.example.snapy;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Camera;
 import android.graphics.ImageFormat;
 import android.graphics.Point;
 import android.graphics.SurfaceTexture;
@@ -37,6 +38,8 @@ import android.util.Size;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Surface;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,12 +47,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.example.snapy.FindUsersActivity;
 import com.example.snapy.followObject.FollowAdapter;
 import com.example.snapy.followObject.FollowObject;
-import com.example.snapy.ProfileActivity;
-import com.example.snapy.R;
-import com.example.snapy.ShowCaptureActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -69,7 +68,7 @@ import java.util.Date;
 import java.util.Locale;
 
 
-public class CameraFragment extends Fragment {
+public class CameraFragment extends Fragment{
 
     final int CAMERA_REQUEST_CODE = 1;
     final int EXTERNAL_STORAGE_CODE = 2;

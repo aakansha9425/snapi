@@ -85,8 +85,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     private void registerUser() {
         final String fullName = etnameReg.getText().toString().trim();
         String password = etPasswrdReg.getText().toString().trim();
-        final String dob = etDobReg.getText().toString().trim();
         final String email = etemailReg.getText().toString().trim();
+        final String dob = etDobReg.getText().toString().trim();
+
 
         if (fullName.isEmpty()) {
             etnameReg.setError("Full Name is required");
