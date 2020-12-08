@@ -1,2 +1,3 @@
-# snapi
-a working version of snapchat
+# CAPTURE
+a working version of snapchat application
+
